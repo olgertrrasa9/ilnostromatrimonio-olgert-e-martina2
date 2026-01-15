@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olgert & Martina - Il nostro matrimonio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f6efe3;
+      color: #333;
+    }
+
+    header {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1520974735194-6c44c3b63b2a") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+
+    .lang {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang button {
+      margin-left: 5px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #c9a24d;
+      color: white;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 80px 20px;
+      background-color: #f6efe3;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #9c7a2f;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .gold-line {
+      width: 80px;
+      height: 2px;
+      background-color: #c9a24d;
+      margin: 0 auto 35px;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .story img,
+    .gallery img,
+    .hotel img {
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hotels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #9c7a2f;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .countdown {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #9c7a2f;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #2f2f2f;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="lang">
+    <button onclick="setLang('it')">IT</button>
+    <button onclick="setLang('sq')">AL</button>
+  </div>
+
+  <header>
+    <div>
+      <h1>Olgert & Martina</h1>
+      <p id="hero-text">Sabato 25 Aprile · Ore 11:00 · Albania</p>
+    </div>
+  </header>
+
+  <section class="fade">
+    <div class="container">
+
+      <p id="story-text" class="intro-text">
+        Con grande gioia vi invitiamo a condividere con noi
+        il giorno più importante della nostra vita.
+      </p>
+
+      <div class="gold-line"></div>
+
+      <div class="section-title">
+        <h2 id="title-story">Il nostro sì</h2>
+      </div>
+
+      <div class="story">
+        <img src="https://private-user-images.githubusercontent.com/255133667/536242939-a51eaf25-f8ea-4159-84ac-8f8868dec572.jpeg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njg0ODcyOTIsIm5iZiI6MTc2ODQ4Njk5MiwicGF0aCI6Ii8yNTUxMzM2NjcvNTM2MjQyOTM5LWE1MWVhZjI1LWY4ZWEtNDE1OS04NGFjLThmODg2OGRlYzU3Mi5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDExNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAxMTVUMTQyMzEyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZjBiNmY0ZDBhOTE0OGM2YzYzN2ZlNjBlZThlZjUyN2E1YjIwMDFmYjQ5YThiZGY1YWE4N2NjOTkyYTg5M2MxZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.4U1Q1VFcq-1mnrovakDrFssiFQndPlEOccxGA6X4LPE" alt="Olgert e Martina">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="container">
+      <div class="section-title">
+        <h2>Momenti insieme</h2>
+      </div>
+
+      <div class="story">
+        <img src="https://private-user-images.githubusercontent.com/255133667/536242938-b6a5a47c-8910-48e0-a585-59c45d90d62b.jpeg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njg0ODkwMDQsIm5iZiI6MTc2ODQ4ODcwNCwicGF0aCI6Ii8yNTUxMzM2NjcvNTM2MjQyOTM4LWI2YTVhNDdjLTg5MTAtNDhlMC1hNTg1LTU5YzQ1ZDkwZDYyYi5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDExNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAxMTVUMTQ1MTQ0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ODM3NWY0MTgwMjIzZDg1MWQ2ZmNlOTczOGRhNzQyZjFjODY0ZTNlNmE2NGQzMzYxNjAwOTBjYTNmNmVjMmI0OSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.MrqdpycATkcBB2kvwtkTf_4r9Gx-pC9Yr0vrjQNJ-Sg" alt="Momento romantico">
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="container">
+      <div class="section-title">
+        <h2 id="hotel-title">Strutture consigliate</h2>
+      </div>
+
+      <p id="hotel-text" style="text-align:center; max-width:800px; margin:0 auto;">
+        Gli alberghi si trovano a pochi metri dal Katalea Palace.
+        Per prenotare è sufficiente scriverci insieme alla conferma
+        indicando numero di stanze e notti.
+        <br><br>
+        Pagamento al check-in – <strong>30 € a notte</strong> (stanza matrimoniale).
+      </p>
+
+      <div class="hotels">
+        <div class="card hotel">
+          <h3>Kodra e Gjelbër</h3>
+          <img src="https://private-user-images.githubusercontent.com/255133667/536247940-b7e365ab-5413-43e2-aa5b-290fc3c2e94d.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njg0ODc3NDIsIm5iZiI6MTc2ODQ4NzQ0MiwicGF0aCI6Ii8yNTUxMzM2NjcvNTM2MjQ3OTQwLWI3ZTM2NWFiLTU0MTMtNDNlMi1hYTViLTI5MGZjM2MyZTk0ZC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDExNVQxNDMwNDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMzExNzljYjQyODFjMDEyYzA2NjEzMGE0MzA5MzZlMDIwZjFhMzk0MWQyY2YwOTZlNTdiNjdmYjVhZTUwMzJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.zvxWaDj3a8NTZL2iOYaCqQUPLgm4jV5fkWtKDK_UW1Q" alt="Kodra e Gjelbër">
+          <p>A pochi metri dalla location<br>Pagamento al check-in</p>
+        </div>
+
+        <div class="card hotel">
+          <h3>Yjet Resort</h3>
+          <img src="https://private-user-images.githubusercontent.com/255133667/536247941-3a41beee-dac1-4f8a-89cb-3fc0a480195e.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njg0ODc3NDIsIm5iZiI6MTc2ODQ4NzQ0MiwicGF0aCI6Ii8yNTUxMzM2NjcvNTM2MjQ3OTQxLTNhNDFiZWVlLWRhYzEtNGY4YS04OWNiLTNmYzBhNDgwMTk1ZS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDExNVQxNDMwNDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMjI5MGMxNTUwMzBkYTdhZDk1MDQ0NzZhYmEwYjA5NDIxNTFmZDVjMjU5ZmE3YjBlMjBkMDI2MTYxN2VhZDBmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.OBXKU5HsaAurgtDQkfyGXDzutTRoTJVMKU2xNMhDDnA" alt="Yjet Resort">
+          <p>A pochi metri dal Katalea Palace<br>Pagamento al check-in</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="container" style="text-align:center;">
+      <div class="section-title">
+        <h2 id="rsvp-title">Conferma presenza</h2>
+      </div>
+
+      <div class="countdown" id="countdown"></div>
+
+      <div class="whatsapp">
+        <a href="https://wa.me/393297544593" target="_blank">
+          Scrivici su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Con amore, Olgert & Martina</p>
+  </footer>
+
+  <script>
+    const weddingDate = new Date("2026-04-25T11:00:00");
+    setInterval(() => {
+      const now = new Date();
+      const diff = weddingDate - now;
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerHTML =
+          "<strong>" + days + "</strong><br>giorni al nostro sì";
+      }
+    }, 1000);
+
+    function setLang(lang) {
+      if (lang === "sq") {
+        document.getElementById("hero-text").innerText =
+          "E shtunë, 25 Prill · Ora 11:00 · Shqipëri";
+        document.getElementById("title-story").innerText = "Po-ja jonë";
+        document.getElementById("story-text").innerText =
+          "Me shumë gëzim ju ftojmë të ndani me ne ditën më të rëndësishme të jetës sonë.";
+        document.getElementById("hotel-title").innerText =
+          "Struktura të rekomanduara";
+        document.getElementById("hotel-text").innerHTML =
+          "Hotelet ndodhen disa metra nga Katalea Palace.<br><br>" +
+          "Për rezervim, na shkruani së bashku me konfirmimin duke treguar " +
+          "numrin e dhomave dhe netëve.<br><br>" +
+          "<strong>Pagesa bëhet në check-in – 30 € për natë (dhomë matrimoniale).</strong>";
+        document.getElementById("rsvp-title").innerText =
+          "Konfirmo pjesëmarrjen";
+      } else {
+        location.reload();
+      }
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, {
+      threshold: 0.15
+    });
+    document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>
